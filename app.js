@@ -3,6 +3,8 @@ const mongoose = require("mongoose")
 const _ = require("lodash");
 const date = require(__dirname + "/date.js")
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 mongoose.set('useFindAndModify', false);
 
@@ -124,8 +126,4 @@ const listName = req.body.listName;
 
 });
 
-     
-
-app.listen(5000, function () {
-    console.log("Server is runnig at port:5000");
-});
+app.listen(PORT, () => console.log(`Listening on port: ${ PORT }`));     
